@@ -75,26 +75,28 @@ This is an exemplatory directory structure of a "symlink-switching" TYPO3 instal
 
     ├── shared/
     │    ├── fileadmin/
-    │    └── var/
-    │        ├── var/charset/
-    │        ├── var/lock/
-    │        ├── var/log/
-    │        └── var/session/
+    │    ├── var/
+    │    │   ├── charset/
+    │    │   ├── lock/
+    │    │   ├── log/
+    │    │   └── session/
+    │    ├── typo3temp/
     ├── releases/
     │    ├── current -> ./release1 (symlink to current release)
     │    └── release1/
     │        ├── public/ (webserver root, via releases/current/public)
     │        │   ├── typo3conf/
     │        │   ├── fileadmin -> ../../../shared/fileadmin/ (symlink)
+    │        │   ├── typo3temp -> ../../../shared/typo3temp/ (symlink)
     │        │   └── index.php
     │        ├── var/
-    │        |   ├── var/build/
-    │        |   ├── var/cache/
-    │        |   ├── var/charset -> ../../../shared/var/charset/ (symlink)
-    │        |   ├── var/labels/
-    │        |   ├── var/lock -> ../../../shared/var/lock/ (symlink)
-    │        |   ├── var/log -> ../../../shared/var/log/ (symlink)
-    │        |   └── var/session -> ../../../shared/var/session/ (symlink)
+    │        |   ├── build/
+    │        |   ├── cache/
+    │        |   ├── charset -> ../../../shared/var/charset/ (symlink)
+    │        |   ├── labels/
+    │        |   ├── lock -> ../../../shared/var/lock/ (symlink)
+    │        |   ├── log -> ../../../shared/var/log/ (symlink)
+    │        |   └── session -> ../../../shared/var/session/ (symlink)
     │        ├── vendor/
     │        ├── composer.json
     │        └── composer.lock
